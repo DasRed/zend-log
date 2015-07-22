@@ -72,7 +72,7 @@ class Console extends AbstractWriter
 	 * @param AdapterInterface $console
 	 * @return self
 	 */
-	public function setConsole(Console $console)
+	public function setConsole(AdapterInterface $console)
 	{
 		$this->console = $console;
 
