@@ -8,7 +8,7 @@ use Zend\Console\Adapter\AdapterInterface;
 class Console extends AbstractWriter
 {
 
-	const QUIT = - 1;
+	const QUIET = - 1;
 
 	/**
 	 *
@@ -96,11 +96,11 @@ class Console extends AbstractWriter
 	 *
 	 * @return self
 	 */
-	public function setQuit($value)
+	public function setQuiet($value)
 	{
 		if ((bool)$value === true)
 		{
-			$this->setLevel(self::QUIT);
+			$this->setLevel(self::QUIET);
 		}
 
 		return $this;
