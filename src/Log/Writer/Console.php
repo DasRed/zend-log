@@ -47,7 +47,18 @@ class Console extends AbstractWriter
 			return;
 		}
 
-		$this->getConsole()->writeLine($event['message']);
+		$writeLine = true;
+		if (array_key_exists('extra', $event) === true && is_array($event['extra']) === true && array_key_exists('writeLine', $event['extra']) === true)
+		{
+			$writeLine = (bool)$event['extra']['writeLine'];
+		}
+
+		$this->getConsole()->write($event['message']);
+
+		if ($writeLine === true)
+		{
+			$this->getConsole()->writeLine();
+		}
 	}
 
 	/**
