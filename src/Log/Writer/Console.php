@@ -12,6 +12,30 @@ class Console extends AbstractWriter
 
 	/**
 	 *
+	 * @var int
+	 */
+	const ALWAYS = Logger::ERR;
+
+	/**
+	 *
+	 * @var int
+	 */
+	const NOTICE = Logger::WARN;
+
+	/**
+	 *
+	 * @var int
+	 */
+	const INFO = Logger::INFO;
+
+	/**
+	 *
+	 * @var int
+	 */
+	const DEBUG = Logger::DEBUG;
+
+	/**
+	 *
 	 * @var AdapterInterface
 	 */
 	protected $console;
@@ -126,21 +150,25 @@ class Console extends AbstractWriter
 	{
 		switch ($verboseLevel)
 		{
+			case - 1:
+				$this->setLevel(self::QUIET);
+				break;
+
 			case 0:
-				$this->setLevel(Logger::ERR);
+				$this->setLevel(self::ALWAYS);
 				break;
 
 			case 1:
-				$this->setLevel(Logger::WARN);
+				$this->setLevel(self::NOTICE);
 				break;
 
 			case 2:
-				$this->setLevel(Logger::INFO);
+				$this->setLevel(self::INFO);
 				break;
 
 			case 3:
 			default:
-				$this->setLevel(Logger::DEBUG);
+				$this->setLevel(self::DEBUG);
 				break;
 		}
 
