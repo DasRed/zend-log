@@ -28,7 +28,7 @@ class Console extends Logger
 	 */
 	public function debug($message, $writeLine = true)
 	{
-		return $this->log(Writer::ALWAYS, $message, [
+		return $this->log(Writer::DEBUG, $message, [
 			'writeLine' => $writeLine
 		]);
 	}
@@ -41,7 +41,7 @@ class Console extends Logger
 	 */
 	public function info($message, $writeLine = true)
 	{
-		return $this->log(Writer::ALWAYS, $message, [
+		return $this->log(Writer::INFO, $message, [
 			'writeLine' => $writeLine
 		]);
 	}
@@ -54,7 +54,7 @@ class Console extends Logger
 	 */
 	public function notice($message, $writeLine = true)
 	{
-		return $this->log(Writer::ALWAYS, $message, [
+		return $this->log(Writer::NOTICE, $message, [
 			'writeLine' => $writeLine
 		]);
 	}
