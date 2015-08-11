@@ -5,6 +5,7 @@
 	"minimum-stability": "dev",
 
 	"require": {
+		"php": ">=5.5",
 		"zendframework/zend-log": "@stable",
 		"zendframework/zend-console": "@stable"
 	},
